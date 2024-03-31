@@ -7,7 +7,12 @@
         "activeTab"
     ],
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "src/ui/popup.html"
+    },
+    "icons": {
+        "16": "assets/16.png",
+        "48": "assets/48.png",
+        "128": "assets/128.png"
     },
     "content_scripts": [
         {
@@ -15,7 +20,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "content.js"
+                "src/content.js"
             ]
         }
     ]

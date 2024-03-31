@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "GSoC Analyzer",
+    "version": "1.0",
+    "description": "See stats of the org in the GSOC page",
+    "permissions": [
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "src/ui/popup.html"
+    },
+    "icons": {
+        "16": "assets/16.png",
+        "48": "assets/48.png",
+        "128": "assets/128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/content.js"
+            ]
+        }
+    ]
+}
