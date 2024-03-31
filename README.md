@@ -1,4 +1,4 @@
 # gsoc-analyzer
 
-![Demo Screenshot](image.png)
+![alt text](image-1.png)
 
