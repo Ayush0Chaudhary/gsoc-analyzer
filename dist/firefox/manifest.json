@@ -1,13 +1,18 @@
 {
     "manifest_version": 3,
     "name": "GSoC Analyzer",
-    "version": "{EXT_VERSION}",
+    "version": "1.0.3",
     "description": "See stats of the org in the GSOC page",
     "permissions": [
         "activeTab"
     ],
     "action": {
         "default_popup": "src/ui/popup.html"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{7c94db4e-4f38-410b-9ae2-5e77fa6dbbf7}"
+        }
     },
     "icons": {
         "16": "assets/16.png",

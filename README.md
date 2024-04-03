@@ -1,5 +1,6 @@
 # gsoc-analyzer
-
+[Chrome Extension Link](https://chromewebstore.google.com/detail/gsoc-analyzer/gajaljimiohdjebdgganepkpihdhlmic) 
+[Firefox Extension Link](https://addons.mozilla.org/en-US/firefox/addon/gsoc-analyzer/?utm_source=gsoc.mdgspace.org)
 ## How to use it? 
 
 1. Open Gsoc orgs browsing page. [LINK](https://summerofcode.withgoogle.com/programs/2024/organizations)
@@ -11,6 +12,6 @@
 ![alt text](image-1.png)
 
 ![alt text](image.png)
-Soon to be published on Chrome Webstore, 
+
 
 

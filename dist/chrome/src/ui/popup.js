@@ -1,42 +1,54 @@
 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
   var tab = tabs[0];
+  console.log(tabs);
+  if (tab != undefined) {
+    if (tab.url.split("/")[2] === "summerofcode.withgoogle.com") {
+      if (tab.url.split("/").length === 6) {
+        document.getElementById("url").innerText =
+          "Open an Org's Page, not the main page";
+        return;
+        // https://summerofcode.withgoogle.com/programs/2024/organizations
+      }
+      const orgName = tab.url.split("/")[6];
+      const index = orgIndex[orgName];
+      if (data[index] != undefined) {
+        document.getElementById("url").innerText = data[index].name;
+        const ctx = document.getElementById("myChart");
 
-  if (tab.url.split("/")[2] === "summerofcode.withgoogle.com") {
-    const orgName = tab.url.split("/")[6];
-    const index = orgIndex[orgName];
-
-    document.getElementById("url").innerText = data[index].name;
-    const ctx = document.getElementById("myChart");
-
-    let label = [];
-    let labeldata = [];
-    for (let i = 0; i < data[index].project.length; i++) {
-      label.push(2009 + i);
-    //   const years = document.createElement("div");
-    //   years.innerText = 2009 + i + " : " + data[index].project[i];
-      labeldata.push(data[index].project[i]);
-    //   document.getElementById("years").appendChild(years);
+        let label = [];
+        let labeldata = [];
+        for (let i = 0; i < data[index].project.length; i++) {
+          label.push(2009 + i);
+          labeldata.push(data[index].project[i]);
+        }
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: label,
+            datasets: [
+              {
+                label: "# of selected contributors",
+                data: labeldata,
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      } else {
+        document.getElementById("error").innerHTML =
+          "This ORG:<br/> 1. Not selected in 2022 or before<br/> 2. Changing its name.";
+      }
+    } else {
+      document.getElementById("url").innerText =
+        "Please open summerofcode.withgoogle.com page";
     }
-    new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: label,
-        datasets: [
-          {
-            label: "# of selected contributors",
-            data: labeldata,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
   } else {
     document.getElementById("url").innerText = "Please open the GSoC page";
   }
@@ -76,6 +88,7 @@ const orgIndex = {
   debian: 30,
   "department-of-biomedical-informatics,-emory-university": 31,
   "django-software-foundation": 32,
+  "django-software-foundation-8o":32,
   "drupal-association": 33,
   "eclipse-foundation": 34,
   electron: 35,
