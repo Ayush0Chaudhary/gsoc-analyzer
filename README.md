@@ -13,5 +13,25 @@
 
 ![alt text](image.png)
 
+## Want to Contribute?
+#### steps for setup
+
+1. Clone the Repository
+2. Give the file execution access `chmod +x ./tools/build.sh`
+3. To build for specific browser use following commands
+```
+// for Chrome
+
+$ ./tools/build.sh chrome
+
+// for FireFox
+
+$ ./tools/build.sh firefox
+
+```
+
+4. Unpack the extension in your browser. If you don't know how to, see [this](https://community.brave.com/t/debugging-custom-extension-add-ons/169217/3)
+5. After load unpacked, select the dist/chrome folder or other folder if your are using firefox
+
 
 
